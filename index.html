@@ -130,15 +130,27 @@
             background: #1a73e8;
             color: white;
             border-radius: 10px;
+            text-align:center;
         }
         #contact p {
             font-size: 1.2em;
             margin-bottom: 30px;
         }
         #contact .cta-btn {
-            background: #34c759;
-            color: white;
-        }
+        display: inline-block;
+        background: #34c759;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2em;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #contact .cta-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
 
         /* Footer */
         footer {

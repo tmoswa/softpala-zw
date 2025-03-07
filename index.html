@@ -4,147 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftPala - Software Development Experts</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         body {
-            line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
-            padding: 20px;
+            background: #f9fafb;
+            overflow-x: hidden;
         }
-        .container {
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            z-index: 1000;
+        }
+        nav .container {
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
-        header {
-            background: #1a73e8;
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #1a73e8;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #1a73e8;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #1a73e8, #34c759);
             color: white;
-            padding: 40px 20px;
-            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
         }
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in;
         }
-        header p {
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .hero .cta-btn {
+            background: #fff;
+            color: #1a73e8;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 1.2em;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        .hero .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
         section {
-            padding: 40px 20px;
-            background: white;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         h2 {
+            font-size: 2.5em;
             color: #1a73e8;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            margin-bottom: 40px;
+            text-align: center;
         }
         .tech-stack, .partners {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
+            justify-items: center;
         }
         .tech-item, .partner-item {
-            background: #e8f0fe;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 600;
             color: #1a73e8;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
-        .cta {
-            margin-top: 20px;
+        .tech-item:hover, .partner-item:hover {
+            transform: translateY(-5px);
         }
-        .cta a {
+        #contact {
             background: #1a73e8;
             color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
+            border-radius: 10px;
         }
-        .cta a:hover {
-            background: #1557b0;
+        #contact p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
         }
+        #contact .cta-btn {
+            background: #34c759;
+            color: white;
+        }
+
+        /* Footer */
         footer {
-            margin-top: 20px;
-            font-size: 0.9em;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
             color: #666;
+            font-size: 0.9em;
+            margin-top: 40px;
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            header p {
-                font-size: 1em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
+            nav .container { flex-direction: column; gap: 15px; }
+            nav ul { flex-direction: column; gap: 10px; }
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.1em; }
+            h2 { font-size: 2em; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">SoftPala</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
             <h1>SoftPala Tech Solutions</h1>
-            <p>Your Trusted Partner in Cutting-Edge Software Development</p>
-        </header>
+            <p>Building the Future with Cutting-Edge Software Development</p>
+            <a href="#contact" class="cta-btn">Get Started</a>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>SoftPala Tech Solutions is a premier software development company delivering innovative, scalable, and high-quality solutions tailored to your business needs. With expertise across a wide range of technologies and strategic partnerships with industry leaders, we are equipped to handle projects of any complexity.</p>
-        </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>SoftPala Tech Solutions is a leading software development firm delivering innovative, scalable, and high-quality solutions. With a team of experts and strategic global partnerships, we turn your vision into reality, no matter the complexity.</p>
+    </section>
 
-        <section id="services">
-            <h2>Our Expertise</h2>
-            <p>We specialize in the following technologies to bring your ideas to life:</p>
-            <div class="tech-stack">
-                <div class="tech-item">Python</div>
-                <div class="tech-item">Django</div>
-                <div class="tech-item">PHP Laravel</div>
-                <div class="tech-item">Java Spring</div>
-                <div class="tech-item">Spring Boot</div>
-                <div class="tech-item">NextJS</div>
-                <div class="tech-item">React</div>
-                <div class="tech-item">Angular</div>
-                <div class="tech-item">Flutter</div>
-            </div>
-        </section>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Expertise</h2>
+        <p>We specialize in the following technologies to bring your ideas to life:</p>
+        <div class="tech-stack">
+            <div class="tech-item">Python</div>
+            <div class="tech-item">Django</div>
+            <div class="tech-item">PHP Laravel</div>
+            <div class="tech-item">Java Spring</div>
+            <div class="tech-item">Spring Boot</div>
+            <div class="tech-item">NextJS</div>
+            <div class="tech-item">React</div>
+            <div class="tech-item">Angular</div>
+            <div class="tech-item">Flutter</div>
+        </div>
+    </section>
 
-        <section id="partners">
-            <h2>Our Development Partners</h2>
-            <p>We collaborate with globally recognized partners to ensure top-tier solutions:</p>
-            <div class="partners">
-                <div class="partner-item">Staxo Group (United Kingdom)</div>
-                <div class="partner-item">Dienstenlandkaart (Netherlands)</div>
-                <div class="partner-item">And Many More</div>
-            </div>
-        </section>
+    <!-- Partners Section -->
+    <section id="partners">
+        <h2>Our Partners</h2>
+        <p>We collaborate with world-class partners to deliver exceptional results:</p>
+        <div class="partners">
+            <div class="partner-item">Staxo Group (UK)</div>
+            <div class="partner-item">Dienstenlandkaart (Netherlands)</div>
+            <div class="partner-item">And Many More</div>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Partner With Us</h2>
-            <p>Ready to transform your vision into reality? Contact us today to discuss your project and secure a winning solution for your tender.</p>
-            <div class="cta">
-                <a href="mailto:info@timothymoswa@gmail.com">Get in Touch</a>
-            </div>
-        </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let’s Work Together</h2>
+        <p>Ready to transform your business with top-tier software solutions? Reach out today!</p>
+        <a href="mailto:info@timothymoswa@gmail.com" class="cta-btn">Contact Us</a>
+    </section>
 
-        <footer>
-            <p>&copy; 2025 SoftPala Tech Solutions. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SoftPala Tech Solutions. All Rights Reserved.</p>
+    </footer>
 
     <script>
-        // Optional: Add smooth scrolling for better UX
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

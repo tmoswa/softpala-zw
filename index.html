@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftPala - Software Development Experts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        header {
+            background: #1a73e8;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        section {
+            padding: 40px 20px;
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .tech-stack, .partners {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .tech-item, .partner-item {
+            background: #e8f0fe;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+        .cta {
+            margin-top: 20px;
+        }
+        .cta a {
+            background: #1a73e8;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        .cta a:hover {
+            background: #1557b0;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SoftPala Tech Solutions</h1>
+            <p>Your Trusted Partner in Cutting-Edge Software Development</p>
+        </header>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>SoftPala Tech Solutions is a premier software development company delivering innovative, scalable, and high-quality solutions tailored to your business needs. With expertise across a wide range of technologies and strategic partnerships with industry leaders, we are equipped to handle projects of any complexity.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Expertise</h2>
+            <p>We specialize in the following technologies to bring your ideas to life:</p>
+            <div class="tech-stack">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">Django</div>
+                <div class="tech-item">PHP Laravel</div>
+                <div class="tech-item">Java Spring</div>
+                <div class="tech-item">Spring Boot</div>
+                <div class="tech-item">NextJS</div>
+                <div class="tech-item">React</div>
+                <div class="tech-item">Angular</div>
+                <div class="tech-item">Flutter</div>
+            </div>
+        </section>
+
+        <section id="partners">
+            <h2>Our Development Partners</h2>
+            <p>We collaborate with globally recognized partners to ensure top-tier solutions:</p>
+            <div class="partners">
+                <div class="partner-item">Staxo Group (United Kingdom)</div>
+                <div class="partner-item">Dienstenlandkaart (Netherlands)</div>
+                <div class="partner-item">And Many More</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Partner With Us</h2>
+            <p>Ready to transform your vision into reality? Contact us today to discuss your project and secure a winning solution for your tender.</p>
+            <div class="cta">
+                <a href="mailto:info@timothymoswa@gmail.com">Get in Touch</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 SoftPala Tech Solutions. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Optional: Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
